@@ -1,0 +1,37 @@
+name: Trigger a quay.io EE rebuild - update requirements.yml, ansible-builder files
+on:
+  schedule:
+    - cron: "37 1 * * *"
+jobs:
+  trigger-ee-rebuild:
+    runs-on: ubuntu-latest
+    name: Trigger a quay.io EE rebuild - update requirements.yml, ansible-builder files
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+      - name: Install ansible-builder and ansible
+        shell: bash
+        run: |
+          set -euxo pipefail
+          pip install -U ansible-builder ansible
+      - name: checkout current repo
+        uses: actions/checkout@v2
+      - name: Trigger a quay.io EE rebuild - update requirements.yml, ansible-builder files
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python .github/scripts/update_and_return_versions.py
+          # use Dockerfile for quay.io builder
+          ansible-builder create -v 3 --file=builder.yml --output-filename=Dockerfile
+          if [ -n "$(git status -uno --porcelain)" ]; then
+            commitmsg="Collection versions and/or builder files were updated"
+          else
+            # force a change to trigger a rebuild
+            date -Ins > nochange.txt
+            git add nochange.txt
+            commitmsg="No changes - just trigger a rebuild"
+          fi
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -a -m "$commitmsg"
+          git push
