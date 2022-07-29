@@ -1,12 +1,12 @@
 collections:
 - name: fedora.linux_system_roles
-  version: 1.24.2
+  version: 1.25.0
 - name: sap.linux
   version: 3.1.4
 - name: microsoft.sql
   version: 1.2.0
 - name: freeipa.ansible_freeipa
-  version: 1.8.1
+  version: 1.8.2
 - name: ansible.netcommon
   version: 3.0.1
 - name: ansible.posix
