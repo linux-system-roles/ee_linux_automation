@@ -4,7 +4,7 @@ collections:
 - name: sap.linux
   version: 3.1.4
 - name: microsoft.sql
-  version: 1.2.3
+  version: 1.2.4
 - name: freeipa.ansible_freeipa
   version: 1.8.3
 - name: ansible.netcommon
