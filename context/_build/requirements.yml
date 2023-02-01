@@ -6,7 +6,7 @@ collections:
 - name: microsoft.sql
   version: 1.2.4
 - name: freeipa.ansible_freeipa
-  version: 1.9.1
+  version: 1.9.2
 - name: ansible.netcommon
   version: 4.1.0
 - name: ansible.posix
@@ -14,4 +14,4 @@ collections:
 - name: community.crypto
   version: 2.10.0
 - name: community.general
-  version: 6.2.0
+  version: 6.3.0
