@@ -6,11 +6,11 @@ collections:
 - name: ansible.utils
   version: 3.0.0
 - name: community.crypto
-  version: 2.17.0
+  version: 2.17.1
 - name: community.general
   version: 8.2.0
 - name: fedora.linux_system_roles
-  version: 1.69.0
+  version: 1.70.0
 - name: freeipa.ansible_freeipa
   version: 1.12.0
 - name: microsoft.sql
