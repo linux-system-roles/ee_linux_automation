@@ -8,7 +8,7 @@ collections:
 - name: community.crypto
   version: 2.22.3
 - name: community.general
-  version: 9.5.1
+  version: 10.0.0
 - name: fedora.linux_system_roles
   version: 1.89.0
 - name: freeipa.ansible_freeipa
