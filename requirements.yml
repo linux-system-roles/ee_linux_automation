@@ -10,7 +10,7 @@ collections:
 - name: community.general
   version: 11.1.2
 - name: fedora.linux_system_roles
-  version: 1.108.3
+  version: 1.108.4
 - name: freeipa.ansible_freeipa
   version: 1.15.1
 - name: microsoft.sql
